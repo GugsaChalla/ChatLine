@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LiveChat</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="chat">
+            <h2 >ChatLine</h2>
+            <div id="title"></div>
+            <div id="count"></div>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id= "typing"></div>
+            </div>
+            <input id="name" type="text" placeholder="Name"/>
+            <input id="message" type= "text" placeholder="Msg"/>
+            <button id="send">Send</button>
+        </div>
+        
+    </body>
+    <script src="chat.js"></script>
+</html>
