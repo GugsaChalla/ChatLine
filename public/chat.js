@@ -9,13 +9,12 @@ const typing = document.getElementById("typing");
 const title = document.getElementById("title");
 const count = document.getElementById("count");
 
-//Emit events
+
 
 //What happens when Send button gets clicked
 button.addEventListener("click", ()=>{
-    let check = name.value.trim();
     //Check if user's name is blank
-    if(check === ""){
+    if(name.value.trim() === ""){
         alert("You must enter your name before you can send a message!");
     }
     //Check if message is empty
@@ -43,7 +42,7 @@ button.addEventListener("click", ()=>{
 //What happens when user is typing
 message.addEventListener("keypress", ()=>{
     let space = name.value.trim();
-    //Check if user entered name befpre typing
+    //Check if user entered name before typing
     if(space === ""){
         alert("You must enter your name before you start typing!");
     }
@@ -54,7 +53,16 @@ message.addEventListener("keypress", ()=>{
         });
     }
     
-})
+});
+
+//When user is no longer clicked on the message textbox
+message.addEventListener("change", ()=>{
+    socket.emit("stop");
+    //if user entered message before name, make message box empty
+    if(name.value.trim() === ""){
+        message.value="";
+    }
+});
 
 
 
@@ -74,6 +82,10 @@ socket.on("typing", (data)=>{
 socket.on("uCount",(data)=> {
     console.log(data.uCount);
     count.innerHTML = "<h3> Number of Users Online: " + data.uCount + "</h3>"
+  });
+
+  socket.on("stop", (data)=>{
+      typing.innerHTML = "";
   });
 
 

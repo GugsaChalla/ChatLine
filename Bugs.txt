@@ -1,0 +1,6 @@
+Bugs:
+1) When user types but enters no name, it is handled except keys still remain in textbox - FIXED
+2) When user types name, then types message, 
+then changes name without changing message, it will say the original name is typing - FIXED
+3) when two people type at the same time, it only shows the most recent person typing and once that person sends
+the other guy still typing is no longer shown to anyone
