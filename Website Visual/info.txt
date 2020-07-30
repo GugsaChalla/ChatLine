@@ -1,1 +1,3 @@
 In this folder are videos of me demonstrating the functions of this website and how it would look on different platforms.
+I opened two browsers to demonstrate the functionality of this web application, however my screen recorder only records one tab at a time.
+So, the visuals in this folder will give you a real idea of what it would be like to communicate with another user via this messaging page.
